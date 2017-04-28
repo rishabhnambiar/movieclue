@@ -1,0 +1,22 @@
+{% include 'base.html' %}
+<body>
+    <div class="search-field">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">movie-clue</h2>
+                <p class="text-center">Our search spans across the universe.</p>
+            </div>
+            <div class="container">
+                <form method="" action="/find/" class="form-inline">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.choice }}
+                        {{ form.search }}
+                    </div>
+                    <input class="btn btn-primary text-center" type="submit" value="SEARCH" name="">
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</body>

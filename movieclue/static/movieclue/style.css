@@ -1,0 +1,119 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size:14px;
+  line-height:1.42857143;
+  color:#666666;
+  background-color:#ffffff;
+}
+
+* {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+
+
+*:before, *:after {
+lock_outline Bootstrap
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.search-field {
+  color:#313437;
+  background-color:#fff;
+  padding:50px 0;
+}
+
+.search-field p {
+  color:#7d8285;
+  line-height:1.5;
+}
+
+.search-field h2 {
+  font-size:36px;
+  font-weight:bold;
+  margin-bottom:25px;
+  line-height:1.5;
+  padding-top:0;
+  margin-top:0;
+  color:inherit;
+}
+
+.search-field .intro {
+  font-size:20px;
+  max-width:500px;
+  margin:0 auto 25px;
+}
+
+.search-field .intro p {
+  margin-bottom:35px;
+}
+
+.search-field form {
+  text-align:center;
+}
+
+.search-field form .form-control {
+  background:#eff1f4;
+  border:none;
+  border-radius:3px;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
+  text-indent:9px;
+  height:45px;
+  margin-right:10px;
+  min-width:250px;
+}
+
+.search-field form .btn {
+  padding:16px 32px;
+  border:none;
+  background:none;
+  box-shadow:none;
+  text-shadow:none;
+  opacity:0.9;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size:13px;
+  letter-spacing:0.4px;
+  line-height:1;
+}
+
+.search-field form .btn:hover {
+  opacity:1;
+}
+
+.search-field form .btn:active {
+  transform:translateY(1px);
+}
+
+.search-field form .btn-primary {
+  background-color:#055ada !important;
+  color:#fff;
+  outline:none !important;
+}
+
+#star {
+  color: #FFD700;
+}
+
+#tryagain {
+  padding-top: 2em;
+}
+
+select {
+   -webkit-appearance: none; 
+   -moz-appearance: none;
+   background: white;
+   border: white;
+   font-weight: bold;
+   overflow: hidden;
+}
+
+#img {
+  padding-bottom: 1.4em;
+}
