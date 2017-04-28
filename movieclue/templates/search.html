@@ -10,10 +10,14 @@
                 <form method="" action="/find/" class="form-inline">
                     {% csrf_token %}
                     <div class="form-group">
-                        {{ form.choice }}
+                        <div style="padding-right: 10px; display: inline-flex;">
+                            {{ form.choice }}
+                        </div>
                         {{ form.search }}
                     </div>
-                    <input class="btn btn-primary text-center" type="submit" value="SEARCH" name="">
+                    <div style="display: inline-flex;">
+                        <input class="btn btn-primary text-center search" type="submit" value="SEARCH" name="">
+                    </div>
                 </form>
             </div>
             

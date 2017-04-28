@@ -8,4 +8,4 @@ class SearchMovieForm(forms.Form):
                ('series', 'TV')]
 
     choice = forms.ChoiceField(label='', choices=choices, widget=forms.Select(
-        attrs={'class': 'dropdown choice'}))
+        attrs={'class': 'dropdown'}))
