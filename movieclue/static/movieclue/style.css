@@ -12,14 +12,6 @@ body {
   box-sizing: border-box;
 }
 
-*:before,
-*:after {
-  lock_outline Bootstrap
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 .search-field {
   color: #313437;
   background-color: #fff;
@@ -100,29 +92,24 @@ body {
   color: #FFD700;
 }
 
-#tryagain {
-  padding-top: 2em;
-}
-
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-border-radius: 5px;
-  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-padding-end: 20px;
-  -webkit-padding-start: 2px;
-  -webkit-user-select: none;
-  background-position: center right;
-  background-repeat: no-repeat;
-  border: 2px solid #CCC;
-  font-size: 90%;
   font-family: Raleway, sans-serif;
-  margin: 0;
-  color: inherit;
-  overflow: hidden;
-  height: 3.5em;
+  background: none;
+  border: 1px solid silver;
+  margin-right: 0.5em;
+  padding: 0.8em;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
 #img {
   padding-bottom: 1.4em;
+}
+
+@media(max-width:768px) {
+  select {
+    margin-bottom: 1em;
+  }
+
 }
