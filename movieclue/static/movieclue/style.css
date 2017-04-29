@@ -92,15 +92,33 @@ body {
   color: #FFD700;
 }
 
-select {
+.selection select {
   font-family: Raleway, sans-serif;
-  background: none;
-  border: 1px solid silver;
-  margin-right: 0.5em;
-  padding: 0.8em;
-  appearance: none;
-  -moz-appearance: none;
+  background: transparent;
+  padding-left: 1em;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  width: 12em;
   -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+@-moz-document url-prefix() {
+  .selection {
+    margin-top: 0.3em;
+  }
+
+}
+
+.selection {
+  background: url(dropdown.png) no-repeat right white;
+  width: 8em;
+  height: 2.9em;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  margin-right: 0.8em;
 }
 
 #img {
@@ -110,6 +128,12 @@ select {
 @media(max-width:768px) {
   select {
     margin-bottom: 1em;
+    padding-top: 10px;
+  }
+
+  .search {
+    margin-top: 1.5em;
+    margin-right: 10px;
   }
 
 }
