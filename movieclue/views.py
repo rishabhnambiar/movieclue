@@ -1,6 +1,7 @@
 import requests
 from django.shortcuts import render
 from .forms import SearchMovieForm
+import json
 
 
 def home(request):
@@ -22,39 +23,30 @@ def find(request):
 
             if ',' in search_key:
                 movies = search_key.split(',')
-                print (movies)
+
                 for movie in movies:
                     url = 'http://www.omdbapi.com/?t={0}'.format(
                         movie)
                     response = requests.get(url)
                     if response.json()['Response'] == 'True':
-                        contexts[movie] = [
-                            response.json()['Year'],
-                            response.json()['Poster'],
-                            response.json()['Runtime'],
-                            response.json()['Title'],
-                            response.json()['Genre'],
-                            response.json()['Plot'],
-                            response.json()['Response'],
-                            response.json()['imdbRating'],
-                            response.json()['Released'],
-                        ]
+                        context = {
+                            'year': response.json()['Year'],
+                            'poster_url': response.json()['Poster'],
+                            'runtime': response.json()['Runtime'],
+                            'title': response.json()['Title'],
+                            'genre': response.json()['Genre'],
+                            'plot': response.json()['Plot'],
+                            'errorstatus': False,
+                            'rating': response.json()['imdbRating'],
+                            'release': response.json()['Released'],
+                        }
 
-                    context = {
-                        'year': contexts[movie][0],
-                        'poster_url': contexts[movie][1],
-                        'runtime': contexts[movie][2],
-                        'title': contexts[movie][3],
-                        'genre': contexts[movie][4],
-                        'plot': contexts[movie][5],
-                        'errorstatus': False,
-                        'rating': contexts[movie][7],
-                        'release': contexts[movie][8],
-                    }
-                    print(context)
+                        contexts[movie] = context
+
                     # TODO: Use the above contexts to populate an HTML template
                     # with multiple results
-
+                contexts['movies'] = movies
+                print (json.dumps(contexts, indent=4, sort_keys=True))
                 return render(request, 'results.html', contexts)
 
             url = 'http://www.omdbapi.com/?t={0}&type={1}'.format(
@@ -78,5 +70,6 @@ def find(request):
                     'error': response.json()['Error'],
                     'errorstatus': True,
                 }
+            print (context)
 
     return render(request, 'results.html', context)

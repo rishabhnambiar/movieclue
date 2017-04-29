@@ -103,6 +103,8 @@ body {
   width: 12em;
   -webkit-appearance: none;
   -moz-appearance: none;
+  font-size: 0.95em;
+  font-weight: bold;
 }
 
 @-moz-document url-prefix() {
