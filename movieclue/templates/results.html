@@ -4,27 +4,29 @@
 	<div class="card container">
 		<div class="card-block">
 			<div class="text-center">
-				<h1>{{ movie.title }}</h1>
-				<h5>{{ movie.year }}</h5>
-				<div id="img">
-					<img class="img-thumbnail" src="{{ movie.poster_url }}" alt="" style="max-width: 20em;max-height: 22em;" />
-				</div>
-				<b>{{ movie.genre }}</b>
-				<br>
-				<p>{{ movie.plot }}</p>
-				<p>{{ movie.release }}</p>
-				<div class="" id="rating">
-					<i id="star" class="fa fa-star"></i>
-					<b>{{ movie.rating }}</b>
-				</div>
-				<div class="" id="runtime">
-					<i class="fa fa-clock-o"></i>
-					<b>{{ movie.runtime }}</b>
-				</div>
-				{% if errorstatus is True %}
-					{{ movie.error }}
+				{% if movie.errorstatus is True %}
 					<br>
+					{{ movie.error }}
+					<br><br>
 					<a href="/"><input class="btn btn-default text-center" type="submit" value="Try Again" name=""></a>
+				{% else %}
+					<h1>{{ movie.title }}</h1>
+					<h5>{{ movie.year }}</h5>
+					<div id="img">
+						<img class="img-thumbnail" src="{{ movie.poster_url }}" alt="" style="max-width: 20em;max-height: 22em;" />
+					</div>
+					<b>{{ movie.genre }}</b>
+					<br>
+					<p>{{ movie.plot }}</p>
+					<p>{{ movie.release }}</p>
+					<div class="" id="rating">
+						<i id="star" class="fa fa-star"></i>
+						<b>{{ movie.rating }}</b>
+					</div>
+					<div class="" id="runtime">
+						<i class="fa fa-clock-o"></i>
+						<b>{{ movie.runtime }}</b>
+					</div>
 				{% endif %}
 				<br><br>
 			</div>
