@@ -6,6 +6,10 @@ body {
   background-color: #ffffff;
 }
 
+h1 {
+  color: #424242;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -125,6 +129,13 @@ body {
 
 #img {
   padding-bottom: 1.4em;
+}
+
+.card {
+  width: 40rem;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  background: #FAFAFA;
 }
 
 @media(max-width:768px) {
