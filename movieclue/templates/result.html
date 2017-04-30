@@ -1,0 +1,31 @@
+{% include 'base.html' %}
+<br><br>
+<div class="card container">
+	<div class="card-block">
+		<div class="text-center">
+			<h1>{{ title }}</h1>
+			<h5>{{ year }}</h5>
+			<div id="img">
+				<img class="img-thumbnail" src="{{ poster_url }}" alt="" style="max-width: 20em;max-height: 22em;" />
+			</div>
+			<b>{{ genre }}</b>
+			<br>
+			<p>{{ plot }}</p>
+			<p>{{ release }}</p>
+			<div class="" id="rating">
+				<i id="star" class="fa fa-star"></i>
+				<b>{{ rating }}</b>
+			</div>
+			<div class="" id="runtime">
+				<i class="fa fa-clock-o"></i>
+				<b>{{ runtime }}</b>
+			</div>
+			{% if errorstatus is True %}
+				{{ error }}
+				<br><br>
+				<a href="/"><input class="btn btn-default text-center" type="submit" value="Try Again" name=""></a>
+			{% endif %}
+			<br><br>
+		</div>
+	</div>
+</div>
