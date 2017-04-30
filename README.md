@@ -1,9 +1,27 @@
 # movieclue
-A Movie finder app powered by the OMDb API and Django.
+A Movie finder app powered by the Open Movie Database API and Django.
 
-  - looks for Movies or TV shows eagerly
-  - users can enter search terms
-  - displays Movie title, genre, plot, release date, IMDb Ratings, Poster and Runtime.
+  - looks for Movies or TV shows
+  - Accepts multiple movie names, when keywords are separated by a '+' sign
+  - displays Movie title, genre, plot, release date, IMDb Ratings, Poster and Runtime
+
+
+### Installation
+
+Clone the repository and cd into movieclue:
+```console 
+git clone https://github.com/rish4bhn/movieclue.git && cd movieclue
+``` 
+
+Install dependencies:
+ ```console
+ pip install -r requirements.txt
+```
+
+Start the application:
+```console
+python3 manage.py runserver
+```
 
 ### Tech
 
