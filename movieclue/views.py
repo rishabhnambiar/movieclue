@@ -1,7 +1,6 @@
 import requests
 from django.shortcuts import render
 from .forms import SearchMovieForm
-import json
 
 
 def home(request):
@@ -21,8 +20,8 @@ def find(request):
             search_key = form.cleaned_data.get('search', '')
             choice = form.cleaned_data.get('choice', '')
 
-            if ',' in search_key:
-                movies = search_key.split(',')
+            if '+' in search_key:
+                movies = search_key.split('+')
 
                 for movie in movies:
                     url = 'http://www.omdbapi.com/?t={0}'.format(
@@ -41,12 +40,14 @@ def find(request):
                             'release': response.json()['Released'],
                         }
 
-                        contexts.append(context)
+                    else:
+                        context = {
+                            'error': response.json()['Error'],
+                            'errorstatus': True,
+                        }
 
-                    # TODO: Use the above contexts to populate an HTML template
-                    # with multiple results
-                contexts.append(movies)
-                print (json.dumps(contexts, indent=4, sort_keys=True))
+                    contexts.append(context)
+
                 return render(request, 'results.html', {'movies': contexts})
 
             url = 'http://www.omdbapi.com/?t={0}&type={1}'.format(
@@ -70,6 +71,5 @@ def find(request):
                     'error': response.json()['Error'],
                     'errorstatus': True,
                 }
-            print (context)
 
-    return render(request, 'results.html', context)
+    return render(request, 'result.html', context)
