@@ -11,7 +11,6 @@
 			<br>
 			<p>{{ movie.plot }}</p>
 			<p>{{ movie.release }}</p>
-			{% if errorstatus is False %}
 				<div class="" id="rating">
 					<i id="star" class="fa fa-star"></i>
 					<b>{{ movie.rating }}</b>
@@ -20,7 +19,6 @@
 					<i class="fa fa-clock-o"></i>
 					<b>{{ movie.runtime }}</b>
 				</div>
-			{% endif %}
 			{% if errorstatus is True %}
 				{{ movie.error }}
 				<br>

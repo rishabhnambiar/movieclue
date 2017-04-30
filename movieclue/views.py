@@ -15,7 +15,7 @@ def home(request):
 def find(request):
     if request.method == 'GET':
         form = SearchMovieForm(request.GET)
-        contexts = {}
+        contexts = list()
 
         if form.is_valid():
             search_key = form.cleaned_data.get('search', '')
@@ -41,13 +41,13 @@ def find(request):
                             'release': response.json()['Released'],
                         }
 
-                        contexts[movie] = context
+                        contexts.append(context)
 
                     # TODO: Use the above contexts to populate an HTML template
                     # with multiple results
-                contexts['movies'] = movies
+                contexts.append(movies)
                 print (json.dumps(contexts, indent=4, sort_keys=True))
-                return render(request, 'results.html', contexts)
+                return render(request, 'results.html', {'movies': contexts})
 
             url = 'http://www.omdbapi.com/?t={0}&type={1}'.format(
                 search_key, choice)
