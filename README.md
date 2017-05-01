@@ -2,7 +2,7 @@
 A Movie finder app powered by the Open Movie Database API and Django.
 
   - looks for Movies or TV shows
-  - Accepts multiple movie names, when keywords are separated by a '+' sign
+  - Accepts multiple movies/shows in one search when keywords are separated by a '+' sign
   - displays Movie title, genre, plot, release date, IMDb Ratings, Poster and Runtime
 
 
