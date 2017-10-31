@@ -1,4 +1,7 @@
-# movieclue
+# movieclue[old]
+(Not functional because the OMDB API has changed to a paid model)
+
+
 A Movie finder app powered by the Open Movie Database API and Django.
 
   - looks for Movies or TV shows
